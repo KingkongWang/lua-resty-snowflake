@@ -30,12 +30,6 @@ function _M.new(worker_id, datacenter_id)
     if not flag then
         return nil
     end
-    print('worker_id:', snowflake.worker_id)
-    print('datacenter_id:', snowflake.datacenter_id)
-    print('seq:', snowflake.sequence)
-    print('last_timestamp:', snowflake.last_timestamp)
-    print('initialized:', snowflake.initialized)
-
 
     return setmetatable({ 
         context = snowflake
@@ -48,7 +42,6 @@ function _M.next_id(self)
     local ok = sf.snowflake_next_id(self.context, id)
     assert(ok)
 
-    print("next id:", id[0])
     return id[0]
 end
 

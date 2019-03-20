@@ -77,18 +77,18 @@ bool snowflake_init(snowflake_t* context,int worker_id, int datacenter_id) {
 bool snowflake_next_id(snowflake_t* context, int64_t* id) {
     int64_t ts;
     if(context == NULL) {
-        printf("context is null\n");
+        //printf("context is null\n");
         return false;
     }
 
     if (!context->initialized) {
-        printf("initialized is error\n");
+        //printf("initialized is error\n");
         return false;
     }
 
     ts = time_gen();
     if (ts < context->last_timestamp) {
-        printf("ts error\n");
+        //printf("ts error\n");
         return false;
     }
 
@@ -107,11 +107,11 @@ bool snowflake_next_id(snowflake_t* context, int64_t* id) {
             (context->worker_id << WORKER_ID_SHIFT) | 
             context->sequence;
 
-    printf("ts:%ld\n", time_gen());
-    printf("epoc:%lld\n", SNOWFLAKE_EPOC);
-    printf("sequence:%d\n", context->sequence);
-    printf("%llx\n", ts);
-    printf("%lld\n", ts);
+    //printf("ts:%ld\n", time_gen());
+    //printf("epoc:%lld\n", SNOWFLAKE_EPOC);
+    //printf("sequence:%d\n", context->sequence);
+    //printf("%llx\n", ts);
+    //printf("%lld\n", ts);
     *id = ts;
 
     return true;
