@@ -9,6 +9,6 @@
   local snowflake = require "resty.snowflake"  
   local worker_id = 1
   local datacenter_id = 1
-  local sf = snowflake.new(5,5)
+  local sf = snowflake.new(worker_id, datacenter_id)
   local next_id = sf:next_id()
 ```
