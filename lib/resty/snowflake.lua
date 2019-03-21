@@ -21,7 +21,7 @@ ffi.cdef[[
 local _M = {_VERSION = '0.0.1'}
 local mt = { __index = _M }
 
-function _M.new(worker_id, datacenter_id)
+function _M.new(self, worker_id, datacenter_id)
     assert(worker_id >= 0 and worker_id < 0x1f)
     assert(datacenter_id >= 0 and datacenter_id < 0x1f)
 
