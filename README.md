@@ -1,5 +1,4 @@
-# lua-resty-snowflake
-
+# lua-resty-snowflake （snowflake算法在OpenResty下的实现）
 * 将lib中文件复制到lualib目录相同文件夹下
 * make命令生成libsnowflake.so
 
